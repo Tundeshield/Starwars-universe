@@ -1,0 +1,29 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	width: 100vw;
+	align-items: center;
+	background-color: black;
+	position: sticky;
+	top: 0;
+	height: var(--header-height);
+	z-index: var(--z-fixed);
+}
+.header__logo > img {
+	width: 8rem;
+	cursor: pointer;
+}
+.header__logo {
+	flex: 1;
+}
+.header__social {
+	flex: 1;
+	text-align: center;
+}
+.header__social .icon {
+	font-size: 1.7rem;
+	margin-right: 0.8rem;
+	cursor: pointer;
+}
