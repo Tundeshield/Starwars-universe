@@ -6,22 +6,48 @@ import HomePage from "./pages/homepage/HomePage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import SearchPage from "./pages/search_page/SearchPage";
+import { useDispatch, useSelector } from "react-redux";
+import {
+	addCharacterList,
+	selectCharacters,
+} from "./redux/features/character/charactersSlice";
+import {
+	addToFavorites,
+	removeFromFavorites,
+	selectFavoriteList,
+} from "./redux/features/favorites/favorites";
 
 function App() {
 	const [characters, setCharacters] = useState([]);
-	const [Loading, setLoading] = useState(true);
 	const api = axios.create({
 		baseURL: "https://swapi.dev/api/people/",
 	});
+	const dispatch = useDispatch();
+	const favorites = useSelector(selectFavoriteList);
 
 	useEffect(() => {
-		api.get("/").then((res) => {
-			const data = res.data.results;
-			console.log(data);
-			setCharacters(data);
-			setLoading(false);
-		});
-	});
+		const fetchData = async () => {
+			try {
+				const response = await api.get("/").then((res) => {
+					const data = res.data.results;
+					setCharacters(data);
+				});
+				return response;
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchData();
+	}, []);
+
+	useEffect(() => {
+		return dispatch(addCharacterList(characters));
+	}, [characters]);
+
+	useEffect(() => {
+		localStorage.setItem("favorites", JSON.stringify(favorites));
+		console.log("state changed again");
+	}, [favorites]);
 
 	return (
 		<Router>
@@ -34,14 +60,14 @@ function App() {
 					{/*Main Page*/}
 					<Switch>
 						<Route path="/" exact>
-							<HomePage characters={characters} />
+							<HomePage />
 						</Route>
 						{/*Movie page*/}
 						<Route path="/actor/:id">
-							<CharacterPage characters={characters} />
+							<CharacterPage />
 						</Route>
 						<Route path="/search/:term">
-							<SearchPage characters={characters} />
+							<SearchPage />
 						</Route>
 					</Switch>
 				</div>

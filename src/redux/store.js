@@ -1,10 +1,12 @@
-import { configureStore, applyMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import charactersSlice from "../redux/features/character/charactersSlice";
-import thunk from "redux-thunk";
+import favoritesSlice from "../redux/features/favorites/favorites";
+import searchResultSlice from "../redux/features/search/searchResultSlice";
 
 export const store = configureStore({
 	reducer: {
 		characters: charactersSlice,
-		applyMiddleware: [thunk],
+		favorites: favoritesSlice,
+		searchResults: searchResultSlice,
 	},
 });

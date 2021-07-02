@@ -1,38 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Card.css";
 import { Link } from "react-router-dom";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import {
+	addToFavorites,
+	removeFromFavorites,
+	selectFavoriteList,
+} from "../../redux/features/favorites/favorites";
+import { useDispatch, useSelector } from "react-redux";
 
 const Card = ({ character }) => {
-	const [favorites, setFavorites] = useState([]);
+	const [isFavorite, setIsFavorite] = useState(false);
+	const dispatch = useDispatch();
+	const favorites = useSelector(selectFavoriteList);
 
-	const addToFavorites = (character) => {
-		const newFavorite = favorites.concat(character);
-		setFavorites(newFavorite);
-		// if (favorites.length === 0) {
-		// 	setFavorites(favorites.push(character));
-		// }
-		// for (let item = 0; item < favorites.length; item++) {
-		// 	if (character.height === item.height) {
-		// 		console.log("We have it in the list already");
-		// 	} else {
-		// 		setFavorites(favorites.push(character));
-		// 	}
-		// 	return true;
-		// }
-		// console.log(favorites);
+	const added = favorites.find((i) => i.height === character.height);
 
-		console.log(favorites);
+	const addToFavoritesHandler = (character) => {
+		if (!added) {
+			dispatch(addToFavorites(character));
+		}
+		setIsFavorite(!isFavorite);
+	};
+	const removeFromFavoritesHandler = (character) => {
+		const filtered = favorites.filter((i) => i !== character);
+		dispatch(removeFromFavorites(filtered));
+		setIsFavorite(false);
 	};
 
 	return (
 		<div className="card">
 			<div className="card__top">
 				<div className="like">
-					<FavoriteBorderOutlinedIcon
-						onClick={() => addToFavorites(character)}
-					/>
+					{isFavorite ? (
+						<FavoriteIcon
+							onClick={() => removeFromFavoritesHandler(character)}
+						/>
+					) : (
+						<FavoriteBorderOutlinedIcon
+							onClick={() => addToFavoritesHandler(character)}
+						/>
+					)}
 				</div>
 
 				<div className="card__name">

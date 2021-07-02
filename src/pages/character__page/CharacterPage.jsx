@@ -1,8 +1,11 @@
 import "./CharacterPage.css";
 import { useParams } from "react-router-dom";
 import Yoda from "../../assets/images/yoda.jpg";
+import { selectCharacters } from "../../redux/features/character/charactersSlice";
+import { useSelector } from "react-redux";
 
-const CharacterPage = ({ characters }) => {
+const CharacterPage = () => {
+	const characters = useSelector(selectCharacters);
 	const params = useParams();
 	const character = characters.find((char) => {
 		return char.height === params.id;

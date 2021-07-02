@@ -21,6 +21,7 @@ const SearchBox = () => {
 			setSearchTerm("");
 			history.push(`/search/${searchTerm}`);
 		});
+		console.log(searchResults);
 	};
 
 	return (

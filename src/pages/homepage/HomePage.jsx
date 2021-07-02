@@ -1,8 +1,11 @@
 import Card from "../../components/card/Card";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+import { selectCharacters } from "../../redux/features/character/charactersSlice";
+import { useSelector } from "react-redux";
 
-const HomePage = ({ characters }) => {
+const HomePage = () => {
+	const characters = useSelector(selectCharacters);
 	return (
 		<>
 			{characters.map((character) => (

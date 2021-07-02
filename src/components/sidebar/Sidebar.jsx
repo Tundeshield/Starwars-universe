@@ -14,7 +14,7 @@ const Sidebar = () => {
 				<div className="sidebar__wrapperTop">
 					<div className="sidebar__item">
 						<FavoriteIcon className="sidebar__icon" />
-						<p className="sidebar__name">Favorite</p>
+						<p className="sidebar__name">Favorites</p>
 					</div>
 					<div className="sidebar__item">
 						<PersonIcon className="sidebar__icon" />
