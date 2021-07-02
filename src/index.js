@@ -1,19 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import { store } from "./redux/store";
-import { Provider } from "react-redux";
-
 import "./index.css";
 import App from "./App";
+import { GlobalProvider } from "./context/GlobalState";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Provider store={store}>
+		<GlobalProvider>
 			<Router>
 				<App />
 			</Router>
-		</Provider>
+		</GlobalProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

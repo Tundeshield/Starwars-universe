@@ -9,6 +9,7 @@ import SearchPage from "./pages/search_page/SearchPage";
 
 function App() {
 	const [characters, setCharacters] = useState([]);
+	const [Loading, setLoading] = useState(true);
 	const api = axios.create({
 		baseURL: "https://swapi.dev/api/people/",
 	});
@@ -16,9 +17,12 @@ function App() {
 	useEffect(() => {
 		api.get("/").then((res) => {
 			const data = res.data.results;
+			console.log(data);
 			setCharacters(data);
+			setLoading(false);
 		});
-	}, []);
+	});
+
 	return (
 		<Router>
 			<div className="app">

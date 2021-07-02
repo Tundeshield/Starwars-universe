@@ -1,5 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, applyMiddleware } from "@reduxjs/toolkit";
+import charactersSlice from "../redux/features/character/charactersSlice";
+import thunk from "redux-thunk";
 
 export const store = configureStore({
-  reducer: {},
-})
+	reducer: {
+		characters: charactersSlice,
+		applyMiddleware: [thunk],
+	},
+});
