@@ -6,19 +6,20 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ characters }) => {
 	return (
 		<div className="header">
-			<div className="header__logo">
+			<Link to="/" className="header__logo">
 				<img src={Logo} alt="" className="logo" />
-			</div>
-			<SearchBox />
+			</Link>
+			<SearchBox characters={characters} />
 			<div className="header__social">
-				<FacebookIcon className="icon"/>
-				<InstagramIcon className="icon"/>
-				<TwitterIcon className="icon"/>
-				<YouTubeIcon className="icon"/>
+				<FacebookIcon className="icon" />
+				<InstagramIcon className="icon" />
+				<TwitterIcon className="icon" />
+				<YouTubeIcon className="icon" />
 			</div>
 		</div>
 	);

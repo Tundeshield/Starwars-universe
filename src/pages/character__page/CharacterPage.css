@@ -1,0 +1,20 @@
+.characterPage {
+	display: flex;
+	justify-content: space-between;
+	height: 100vh;
+	padding-top: 2rem;
+	width: 100vw;
+}
+.characterPage__left {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+}
+
+img {
+	width: 25rem;
+}
+.charPage__img {
+	margin-right: 3rem;
+}

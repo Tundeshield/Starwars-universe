@@ -1,15 +1,19 @@
 .sidebar {
 	flex: 1;
-	min-height: calc(100vh - var(--header-height));
+	height: calc(100vh - var(--header-height));
 	position: relative;
 	position: sticky;
 	top: 50px;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	/* background-image: linear-gradient(to right, #051421, #042727); */
 	box-sizing: border-box;
-	padding: 1rem;
+	padding: 0.5rem;
+	max-width: 15rem;
+	padding-top: 0.5rem;
+	padding-right: 0.5rem;
+	margin-right: 0rem;
+	
 }
 .sidebar__wrapper {
 	display: flex;
@@ -21,6 +25,7 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	width: 70%;
 }
 .sidebar__item .sidebar__icon {
 	font-size: 1.4rem;
@@ -32,6 +37,8 @@
 .sidebar__item .sidebar__icon:hover {
 	transition: 0.3s;
 	color: white;
+	animation-name: spin;
+	animation-duration: 1000ms;
 }
 .sidebar__wrapperTop {
 	border-radius: 1rem;
@@ -95,6 +102,8 @@
 .sidebar__wrapperBottom .sidebar__icon:hover {
 	color: white;
 	background-color: white;
+	animation-name: spin;
+	animation-duration: 1000ms;
 }
 
 .sidebar__wrapperBottom:hover {
@@ -105,4 +114,13 @@
 	opacity: 1;
 	color: aliceblue;
 	transition: 0.4s ease;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

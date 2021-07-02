@@ -5,7 +5,8 @@ import ShareIcon from "@material-ui/icons/Share";
 import StarsIcon from "@material-ui/icons/Stars";
 import FolderIcon from "@material-ui/icons/Folder";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import PersonIcon from "@material-ui/icons/Person";
 const Sidebar = () => {
 	return (
 		<div className="sidebar">
@@ -14,6 +15,10 @@ const Sidebar = () => {
 					<div className="sidebar__item">
 						<FavoriteIcon className="sidebar__icon" />
 						<p className="sidebar__name">Favorite</p>
+					</div>
+					<div className="sidebar__item">
+						<PersonIcon className="sidebar__icon" />
+						<p className="sidebar__name">Profile</p>
 					</div>
 					<div className="sidebar__item">
 						<StarsIcon className="sidebar__icon" />
@@ -28,7 +33,7 @@ const Sidebar = () => {
 						<p className="sidebar__name">Folders </p>
 					</div>
 					<div className="sidebar__item">
-						<FavoriteIcon className="sidebar__icon" />
+						<DeleteForeverIcon className="sidebar__icon" />
 						<p className="sidebar__name">Trash</p>
 					</div>
 				</div>
