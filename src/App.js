@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -10,7 +10,6 @@ import SearchPage from "./pages/search_page/SearchPage";
 import { useDispatch, useSelector } from "react-redux";
 import { addCharacterList } from "./redux/features/character/charactersSlice";
 import { selectFavoriteList } from "./redux/features/favorites/favorites";
-import { selectCharacters } from "./redux/features/character/charactersSlice";
 
 function App() {
 	const api = axios.create({
@@ -18,7 +17,6 @@ function App() {
 	});
 	const dispatch = useDispatch();
 	const favorites = useSelector(selectFavoriteList);
-	const chars = useSelector(selectCharacters);
 
 	useEffect(() => {
 		const fetchData = async () => {

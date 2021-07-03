@@ -5,7 +5,7 @@
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+	padding: 0.5rem 0.5rem 0rem 0.2rem;
 	margin-right: 0rem;
 }
 
@@ -112,7 +112,7 @@
 
 .sidebar__wrapperTop .sub__menu {
 	width: 80%;
-	padding: 0.5rem;
+	padding: 0rem;
 	margin-bottom: 0.5rem;
 	background-image: linear-gradient(to right, #062138, #020505);
 	border: none;
@@ -122,16 +122,13 @@
 	width: 100%;
 	cursor: pointer;
 	transition: transform 200ms;
-	margin: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .sub__menuitem .submenu__itemText {
 	font-size: 0.8rem;
-}
-.sub__menuitem:hover {
-	transform: scale(1.02);
-	background-image: linear-gradient(to right, #0b1c2c, #1a253b);
-	padding-left: 0.5px;
-	border-radius: 4%;
+	overflow-wrap: break-word;
 }
 
 .show {
@@ -141,6 +138,12 @@
 .hide {
 	display: none;
 	transition: 1000ms ease-out;
+}
+.deleteIcon.MuiSvgIcon-root {
+	font-size: 1.2rem;
+}
+.deleteIcon.MuiSvgIcon-root :hover {
+	color: red;
 }
 
 @keyframes spin {

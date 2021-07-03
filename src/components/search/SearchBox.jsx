@@ -10,11 +10,9 @@ const SearchBox = () => {
 	const [searchTerm, setSearchTerm] = useState("");
 	const history = useHistory();
 	const dispatch = useDispatch();
-
 	const searchApi = axios.create({
 		baseURL: `https://swapi.dev/api/people/?search=${searchTerm}`,
 	});
-
 	const fetchData = async () => {
 		try {
 			const response = await searchApi.get().then((res) => {
@@ -28,7 +26,6 @@ const SearchBox = () => {
 			console.error(error);
 		}
 	};
-
 	return (
 		<div className="header__search">
 			<div className="header__searchContainer">

@@ -1,6 +1,5 @@
 import "./CharacterPage.css";
 import { useParams } from "react-router-dom";
-import Yoda from "../../assets/images/yoda.jpg";
 import { selectCharacters } from "../../redux/features/character/charactersSlice";
 import { useSelector } from "react-redux";
 

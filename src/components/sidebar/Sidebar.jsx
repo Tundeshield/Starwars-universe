@@ -5,18 +5,28 @@ import ShareIcon from "@material-ui/icons/Share";
 import StarsIcon from "@material-ui/icons/Stars";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import PersonIcon from "@material-ui/icons/Person";
+import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectFavoriteList } from "../../redux/features/favorites/favorites";
+import {
+	selectFavoriteList,
+	removeFromFavorites,
+} from "../../redux/features/favorites/favorites";
+import { useDispatch } from "react-redux";
 
 const Sidebar = () => {
 	const [toggle, setToggle] = useState(false);
 	const favorites = useSelector(selectFavoriteList);
+	const dispatch = useDispatch();
 
 	const handleToggle = () => {
 		setToggle(!toggle);
 	};
 
+	const removeFromFavoritesHandler = (favorite) => {
+		const filtered = favorites.filter((i) => i !== favorite);
+		dispatch(removeFromFavorites(filtered));
+	};
 	return (
 		<div className="sidebar">
 			<div className="sidebar__wrapper">
@@ -34,6 +44,10 @@ const Sidebar = () => {
 										<Link to={`/character/${favorite.height}`}>
 											<p className="submenu__itemText">{favorite.name}</p>
 										</Link>
+										<CloseIcon
+											onClick={() => removeFromFavoritesHandler(favorite)}
+											className="deleteIcon"
+										/>
 									</div>
 								</div>
 						  ))}

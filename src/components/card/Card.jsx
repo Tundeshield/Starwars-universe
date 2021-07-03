@@ -4,7 +4,6 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Card.css";
 import { Link } from "react-router-dom";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import {
 	addToFavorites,
 	removeFromFavorites,
@@ -18,19 +17,17 @@ const Card = ({ character }) => {
 	const favorites = useSelector(selectFavoriteList);
 
 	const added = favorites.find((i) => i.height === character.height);
-
 	const addToFavoritesHandler = (character) => {
 		if (!added) {
 			dispatch(addToFavorites(character));
+			setIsFavorite(!isFavorite);
 		}
-		setIsFavorite(!isFavorite);
 	};
 	const removeFromFavoritesHandler = (character) => {
 		const filtered = favorites.filter((i) => i !== character);
 		dispatch(removeFromFavorites(filtered));
 		setIsFavorite(false);
 	};
-
 	return (
 		<div className="card">
 			<div className="card__top">
@@ -46,15 +43,7 @@ const Card = ({ character }) => {
 							/>
 						)}
 					</div>
-					<div className="delete">
-						{isFavorite && (
-							<DeleteForeverIcon
-								onClick={() => removeFromFavoritesHandler(character)}
-							/>
-						)}
-					</div>
 				</div>
-
 				<div className="card__name">
 					<h2>Name : {character.name}</h2>
 				</div>

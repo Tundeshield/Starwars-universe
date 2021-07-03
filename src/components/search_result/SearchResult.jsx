@@ -11,9 +11,7 @@ const SearchResult = ({ result }) => {
 				repudiandae voluptates beatae fugit expedita hic fugiat, eaque quisquam
 				perferendis iusto.
 			</p>
-			<h4>
-				Read more about...
-			</h4>
+			<h4>Read more about...</h4>
 		</Link>
 	);
 };
