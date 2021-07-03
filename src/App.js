@@ -36,10 +36,10 @@ function App() {
 		fetchData();
 	}, []);
 
-	// useEffect(() => {
-	// 	localStorage.setItem("favorites", JSON.stringify(favorites));
-	// 	console.log("state changed again");
-	// }, [favorites]);
+	useEffect(() => {
+		localStorage.setItem("favorites", JSON.stringify(favorites));
+		console.log("state changed again");
+	}, [favorites]);
 
 	return (
 		<Router>
@@ -60,7 +60,7 @@ function App() {
 							<Route path="/character/:id">
 								<CharacterPage />
 							</Route>
-							<Route path="/search/:term" >
+							<Route path="/search/:term">
 								<SearchPage />
 							</Route>
 						</div>
