@@ -2,14 +2,14 @@
 	display: flex;
 	justify-content: space-between;
 	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-bottom: 1.5rem;
 	width: 100vw;
 	align-items: center;
-	
 	position: sticky;
 	top: 0;
 	height: var(--header-height);
 	z-index: var(--z-fixed);
+	background-color: black;
 }
 .header__logo > img {
 	width: 8rem;

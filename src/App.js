@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./App.css";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import CharacterPage from "./pages/character__page/CharacterPage";
@@ -54,15 +55,17 @@ function App() {
 			<div className="app">
 				{/*Header*/}
 				<Header />
-				<div className="main">
+				<div className="body">
 					{/*Sidebar*/}
-					<Sidebar />
-					{/*Main Page*/}
+					<div className="body__left">
+						<Sidebar />
+					</div>
 					<Switch>
-						<Route path="/" exact>
-							<HomePage />
-						</Route>
-						{/*Movie page*/}
+						<div className="body__right">
+							<Route path="/" exact>
+								<HomePage />
+							</Route>
+						</div>
 						<Route path="/actor/:id">
 							<CharacterPage />
 						</Route>

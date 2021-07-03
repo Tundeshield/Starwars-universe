@@ -7,6 +7,6 @@ export const store = configureStore({
 	reducer: {
 		characters: charactersSlice,
 		favorites: favoritesSlice,
-		searchResults: searchResultSlice,
+		search: searchResultSlice,
 	},
 });

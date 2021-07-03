@@ -1,0 +1,30 @@
+.app {
+	background-color: black;
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	color: rgb(207, 207, 207);
+	font-family: "Roboto", sans-serif;
+	padding: 1rem;
+}
+.app::-webkit-scrollbar {
+	display: none;
+}
+
+.body {
+	display: grid;
+	grid-template-columns: 1fr 11fr;
+}
+
+.body__left {
+	flex: 1;
+}
+
+.body__right {
+	height: 100%;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	
+}

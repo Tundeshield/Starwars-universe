@@ -2,7 +2,7 @@
 	color: rgba(255, 255, 255, 0.753);
 	width: 18.75rem;
 	height: 10rem;
-	padding: 1.5rem;
+	padding: 1rem;
 	padding-left: 20px;
 	transition: transform 200ms;
 	display: flex;
@@ -16,6 +16,7 @@
 	opacity: 0.6;
 	cursor: pointer;
 	margin-right: 1.5rem;
+	background-color: red;
 }
 
 .card:hover {

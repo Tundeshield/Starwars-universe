@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const searchResultSlice = createSlice({
-	name: "searchresults",
+	name: "search",
 	initialState: {
 		value: [],
 	},
 	reducers: {
-		addSearchResult: (state, action) => {
+		searchTermResult: (state, action) => {
 			return {
 				value: [...action.payload],
 			};
@@ -15,6 +15,6 @@ export const searchResultSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addSearchResult } = searchResultSlice.actions;
-export const searchResults = (state) => state.searchresults.value;
+export const { searchTermResult } = searchResultSlice.actions;
+export const useSearchResults = (state) => state.search.value;
 export default searchResultSlice.reducer;
