@@ -4,10 +4,10 @@ import Yoda from "../../assets/images/yoda.jpg";
 import { selectCharacters } from "../../redux/features/character/charactersSlice";
 import { useSelector } from "react-redux";
 
-const CharacterPage = ({ chars }) => {
-	// const characters = useSelector(selectCharacters);
+const CharacterPage = () => {
+	const characters = useSelector(selectCharacters);
 	const { id } = useParams();
-	const character = chars.find((char) => {
+	const character = characters.find((char) => {
 		return id === char.height;
 	});
 	console.log(character);
