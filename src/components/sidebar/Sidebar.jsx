@@ -13,7 +13,7 @@ import { selectFavoriteList } from "../../redux/features/favorites/favorites";
 
 const Sidebar = () => {
 	const [toggle, setToggle] = useState(false);
-	const favorites = useSelector(selectFavoriteList);
+	// const favorites = useSelector(selectFavoriteList);
 
 	const handleToggle = () => {
 		setToggle(!toggle);
@@ -28,7 +28,7 @@ const Sidebar = () => {
 						<p className="sidebar__name">Favorites</p>
 					</div>
 
-					<div className={`sub__menu ${toggle ? "show" : "hide"}`}>
+					{/* <div className={`sub__menu ${toggle ? "show" : "hide"}`}>
 						{favorites.length === 0
 							? setToggle(false)
 							: favorites.map((favorite) => (
@@ -38,7 +38,7 @@ const Sidebar = () => {
 										</Link>
 									</div>
 							  ))}
-					</div>
+					</div> */}
 
 					<div className="sidebar__item">
 						<PersonIcon className="sidebar__icon" />

@@ -18,8 +18,6 @@ const SearchBox = () => {
 
 	const fetchData = async (e) => {
 		e.preventDefault();
-		if (!searchTerm) return;
-		
 		await searchAPI.get().then((response) => {
 			const data = response.data.results;
 			setSearchResults(data);
@@ -31,7 +29,7 @@ const SearchBox = () => {
 	};
 
 	return (
-		<form className="header__search" onSubmit={fetchData}>
+		<div className="header__search" onSubmit={fetchData}>
 			<div className="header__searchContainer">
 				<input
 					type="text"
@@ -40,10 +38,11 @@ const SearchBox = () => {
 					onChange={(e) => setSearchTerm(e.target.value)}
 				/>
 				<div>
+					<SearchIcon onClick={fetchData} />
 					<button type="submit" />
 				</div>
 			</div>
-		</form>
+		</div>
 	);
 };
 

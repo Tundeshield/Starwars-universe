@@ -8,15 +8,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import SearchPage from "./pages/search_page/SearchPage";
 import { useDispatch, useSelector } from "react-redux";
-import {
-	addCharacterList,
-	selectCharacters,
-} from "./redux/features/character/charactersSlice";
-import {
-	addToFavorites,
-	removeFromFavorites,
-	selectFavoriteList,
-} from "./redux/features/favorites/favorites";
+import { addCharacterList } from "./redux/features/character/charactersSlice";
+import { selectFavoriteList } from "./redux/features/favorites/favorites";
 
 function App() {
 	const [characters, setCharacters] = useState([]);
@@ -41,9 +34,9 @@ function App() {
 		fetchData();
 	}, []);
 
-	useEffect(() => {
-		return dispatch(addCharacterList(characters));
-	}, [characters]);
+	// useEffect(() => {
+	// 	return dispatch(addCharacterList(characters));
+	// }, []);
 
 	useEffect(() => {
 		localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -63,7 +56,7 @@ function App() {
 					<Switch>
 						<div className="body__right">
 							<Route path="/" exact>
-								<HomePage />
+								<HomePage characters={characters} />
 							</Route>
 						</div>
 						<Route path="/actor/:id">
