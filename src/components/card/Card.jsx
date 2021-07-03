@@ -4,6 +4,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Card.css";
 import { Link } from "react-router-dom";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import {
 	addToFavorites,
 	removeFromFavorites,
@@ -33,16 +34,25 @@ const Card = ({ character }) => {
 	return (
 		<div className="card">
 			<div className="card__top">
-				<div className="like">
-					{isFavorite ? (
-						<FavoriteIcon
-							onClick={() => removeFromFavoritesHandler(character)}
-						/>
-					) : (
-						<FavoriteBorderOutlinedIcon
-							onClick={() => addToFavoritesHandler(character)}
-						/>
-					)}
+				<div className="card__icons">
+					<div className="like">
+						{isFavorite ? (
+							<FavoriteIcon
+								onClick={() => removeFromFavoritesHandler(character)}
+							/>
+						) : (
+							<FavoriteBorderOutlinedIcon
+								onClick={() => addToFavoritesHandler(character)}
+							/>
+						)}
+					</div>
+					<div className="delete">
+						{isFavorite && (
+							<DeleteForeverIcon
+								onClick={() => removeFromFavoritesHandler(character)}
+							/>
+						)}
+					</div>
 				</div>
 
 				<div className="card__name">

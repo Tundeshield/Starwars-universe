@@ -26,11 +26,20 @@
 .card__read {
 	cursor: pointer;
 }
-.like {
+.card__icons {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
 	right: 1rem;
+}
+.like .MuiSvgIcon-root {
 	cursor: pointer;
 	z-index: 1;
+}
+.delete .MuiSvgIcon-root {
+	cursor: pointer;
+	z-index: 1;
+	color: #a7f8a0;
 }
 a {
 	text-decoration: none;

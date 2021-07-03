@@ -13,7 +13,7 @@
 
 .body {
 	display: grid;
-	grid-template-columns: 1fr 11fr;
+	grid-template-columns: 1fr 7fr;
 }
 
 .body__left {
@@ -26,5 +26,5 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
-	
+	margin-left: 0.2rem;
 }

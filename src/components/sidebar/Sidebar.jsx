@@ -52,11 +52,6 @@ const Sidebar = () => {
 						<ShareIcon className="sidebar__icon" />
 						<p className="sidebar__name">Shared</p>
 					</div>
-
-					<div className="sidebar__item">
-						<DeleteForeverIcon className="sidebar__icon" />
-						<p className="sidebar__name">Trash</p>
-					</div>
 				</div>
 				<div className="sidebar__wrapperBottom">
 					<ExitToAppIcon className="sidebar__icon" />

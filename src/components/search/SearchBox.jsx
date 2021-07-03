@@ -16,7 +16,10 @@ const SearchBox = () => {
 		baseURL: `https://swapi.dev/api/people/?search=${searchTerm}`,
 	});
 
-	const fetchData = async () => {
+	const fetchData = async (e) => {
+		e.preventDefault();
+		if (!searchTerm) return;
+		
 		await searchAPI.get().then((response) => {
 			const data = response.data.results;
 			setSearchResults(data);
@@ -28,21 +31,19 @@ const SearchBox = () => {
 	};
 
 	return (
-		<>
-			<div className="header__search">
-				<div className="header__searchContainer">
-					<input
-						type="text"
-						placeholder="Search for a character..."
-						value={searchTerm}
-						onChange={(e) => setSearchTerm(e.target.value)}
-					/>
-				</div>
-				<div className="header__searchContainerRight">
-					<SearchIcon className="icon" onClick={fetchData} />
+		<form className="header__search" onSubmit={fetchData}>
+			<div className="header__searchContainer">
+				<input
+					type="text"
+					placeholder="Search for a character..."
+					value={searchTerm}
+					onChange={(e) => setSearchTerm(e.target.value)}
+				/>
+				<div>
+					<button type="submit" />
 				</div>
 			</div>
-		</>
+		</form>
 	);
 };
 
