@@ -12,24 +12,30 @@ const SearchBox = () => {
 	const history = useHistory();
 	const dispatch = useDispatch();
 
-	const searchAPI = axios.create({
+	const api = axios.create({
 		baseURL: `https://swapi.dev/api/people/?search=${searchTerm}`,
 	});
 
-	const fetchData = async (e) => {
-		e.preventDefault();
-		await searchAPI.get().then((response) => {
-			const data = response.data.results;
-			setSearchResults(data);
-			setSearchTerm("");
-			history.push(`/search/${searchTerm}`);
-		});
-		dispatch(searchTermResult(searchResults));
+	const fetchData = async () => {
+		try {
+			const response = await api.get("/").then((res) => {
+				const data = res.data.results;
+				setSearchResults(data);
+
+				history.push(`/search/${searchTerm}`);
+				console.log(searchResults);
+				dispatch(searchTermResult(searchResults));
+			});
+			return response;
+		} catch (error) {
+			console.error(error);
+		}
 		console.log(searchResults);
+		dispatch(searchTermResult(searchResults));
 	};
 
 	return (
-		<div className="header__search" onSubmit={fetchData}>
+		<div className="header__search">
 			<div className="header__searchContainer">
 				<input
 					type="text"
@@ -38,7 +44,7 @@ const SearchBox = () => {
 					onChange={(e) => setSearchTerm(e.target.value)}
 				/>
 
-				<SearchIcon onClick={fetchData} />
+				<SearchIcon onClick={fetchData} className="icon" />
 			</div>
 		</div>
 	);

@@ -68,7 +68,7 @@ const Card = ({ character }) => {
 					<h5>Height: {character.height}</h5>
 				</div>
 			</div>
-			<Link to={`/actor/${character.height}`}>
+			<Link to={`/character/${character.height}`}>
 				<div className="card__read">
 					<p>Read More</p>
 					<ChevronRightIcon className="icon__link" />

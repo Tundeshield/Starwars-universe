@@ -24,12 +24,13 @@
 	outline: none;
 }
 
-.header__searchContainerRight .icon {
-	display: none;
-}
-.header__searchContainerRight .icon:hover {
-	transform: scale(1.5);
+.header__searchContainer .icon {
+	cursor: pointer;
 	color: black;
+}
+.header__searchContainer .icon:hover {
+	transform: scale(1.5);
+	color: rgb(66, 66, 66);
 }
 
 @keyframes growIcon {

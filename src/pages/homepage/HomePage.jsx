@@ -11,14 +11,16 @@ import { addCharacterList } from "../../redux/features/character/charactersSlice
 
 const HomePage = ({ characters }) => {
 	const dispatch = useDispatch();
-	useEffect(() => {
-		dispatch(addCharacterList(characters));
-	}, []);
+	const chars = useSelector(selectCharacters);
+
+	// useEffect(() => {
+	// 	dispatch(addCharacterList(characters));
+	// }, []);
 
 	return (
 		<>
-			{characters.map((character) => (
-				<div key={character.height}>
+			{chars.map((character) => (
+				<div key={character.height} id={character.height}>
 					<Card character={character} />
 				</div>
 			))}

@@ -4,13 +4,13 @@ import Yoda from "../../assets/images/yoda.jpg";
 import { selectCharacters } from "../../redux/features/character/charactersSlice";
 import { useSelector } from "react-redux";
 
-const CharacterPage = () => {
-	const characters = useSelector(selectCharacters);
-	const params = useParams();
-	const character = characters.find((char) => {
-		return char.height === params.id;
+const CharacterPage = ({ chars }) => {
+	// const characters = useSelector(selectCharacters);
+	const { id } = useParams();
+	const character = chars.find((char) => {
+		return id === char.height;
 	});
-
+	console.log(character);
 	return (
 		<div className="characterPage">
 			<div className="characterPage__left">
@@ -38,9 +38,6 @@ const CharacterPage = () => {
 				<div className="character__detail">
 					<h5>Films: </h5>
 				</div>
-				{/* <div className="character__detail0">
-					<h5>Created: 172 cm</h5>
-				</div> */}
 			</div>
 
 			<div className="charPage__img">
