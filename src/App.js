@@ -34,10 +34,6 @@ function App() {
 		fetchData();
 	}, []);
 
-	// useEffect(() => {
-	// 	return dispatch(addCharacterList(characters));
-	// }, []);
-
 	useEffect(() => {
 		localStorage.setItem("favorites", JSON.stringify(favorites));
 		console.log("state changed again");

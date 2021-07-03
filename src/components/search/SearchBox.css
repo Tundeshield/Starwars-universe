@@ -16,7 +16,6 @@
 }
 .header__searchContainer > input {
 	width: 100%;
-	height: 1rem;
 	border: none;
 	padding-left: 0.5rem;
 	background-color: whitesmoke;
@@ -32,9 +31,7 @@
 	transform: scale(1.5);
 	color: black;
 }
-button {
-	display: none;
-}
+
 @keyframes growIcon {
 	from {
 		transform: scale(0);

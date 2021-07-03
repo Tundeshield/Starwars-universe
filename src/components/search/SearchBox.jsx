@@ -37,10 +37,8 @@ const SearchBox = () => {
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
 				/>
-				<div>
-					<SearchIcon onClick={fetchData} />
-					<button type="submit" />
-				</div>
+
+				<SearchIcon onClick={fetchData} />
 			</div>
 		</div>
 	);
