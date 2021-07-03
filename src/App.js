@@ -58,9 +58,9 @@ function App() {
 							</Route>
 
 							<Route path="/character/:id">
-								<CharacterPage chars={chars} />
+								<CharacterPage />
 							</Route>
-							<Route path="/search/:term" exact>
+							<Route path="/search/:term" >
 								<SearchPage />
 							</Route>
 						</div>

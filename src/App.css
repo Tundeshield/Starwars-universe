@@ -7,9 +7,9 @@
 	font-family: "Roboto", sans-serif;
 	padding: 1rem;
 }
-.app::-webkit-scrollbar {
+/* .app::-webkit-scrollbar {
 	display: none;
-}
+} */
 
 .body {
 	display: grid;

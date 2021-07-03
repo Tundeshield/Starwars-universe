@@ -4,6 +4,8 @@
 	height: 100vh;
 	padding-top: 2rem;
 	width: 100vw;
+	padding-right: 4rem;
+	padding: 2rem;
 }
 .characterPage__left {
 	display: flex;
@@ -14,6 +16,7 @@
 
 img {
 	width: 25rem;
+	padding: 2rem;
 }
 .charPage__img {
 	margin-right: 3rem;

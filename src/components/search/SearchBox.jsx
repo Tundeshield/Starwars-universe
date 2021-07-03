@@ -8,30 +8,25 @@ import { useDispatch } from "react-redux";
 
 const SearchBox = () => {
 	const [searchTerm, setSearchTerm] = useState("");
-	const [searchResults, setSearchResults] = useState([]);
 	const history = useHistory();
 	const dispatch = useDispatch();
 
-	const api = axios.create({
+	const searchApi = axios.create({
 		baseURL: `https://swapi.dev/api/people/?search=${searchTerm}`,
 	});
 
 	const fetchData = async () => {
 		try {
-			const response = await api.get("/").then((res) => {
+			const response = await searchApi.get().then((res) => {
 				const data = res.data.results;
-				setSearchResults(data);
-
+				dispatch(searchTermResult(data));
 				history.push(`/search/${searchTerm}`);
-				console.log(searchResults);
-				dispatch(searchTermResult(searchResults));
+				setSearchTerm("");
 			});
 			return response;
 		} catch (error) {
 			console.error(error);
 		}
-		console.log(searchResults);
-		dispatch(searchTermResult(searchResults));
 	};
 
 	return (
@@ -43,7 +38,6 @@ const SearchBox = () => {
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
 				/>
-
 				<SearchIcon onClick={fetchData} className="icon" />
 			</div>
 		</div>
