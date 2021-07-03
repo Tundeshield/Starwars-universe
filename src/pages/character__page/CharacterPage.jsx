@@ -39,10 +39,6 @@ const CharacterPage = () => {
 					<h5>Films: </h5>
 				</div>
 			</div>
-
-			<div className="charPage__img">
-				<img src={Yoda} alt="" />
-			</div>
 		</div>
 	);
 };

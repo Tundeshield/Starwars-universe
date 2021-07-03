@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import "./Card.css";
@@ -17,24 +17,24 @@ const Card = ({ character }) => {
 	const dispatch = useDispatch();
 	const favorites = useSelector(selectFavoriteList);
 
-	// const added = favorites.find((i) => i.height === character.height);
+	const added = favorites.find((i) => i.height === character.height);
 
-	// const addToFavoritesHandler = (character) => {
-	// 	if (!added) {
-	// 		dispatch(addToFavorites(character));
-	// 	}
-	// 	setIsFavorite(!isFavorite);
-	// };
-	// const removeFromFavoritesHandler = (character) => {
-	// 	const filtered = favorites.filter((i) => i !== character);
-	// 	dispatch(removeFromFavorites(filtered));
-	// 	setIsFavorite(false);
-	// };
+	const addToFavoritesHandler = (character) => {
+		if (!added) {
+			dispatch(addToFavorites(character));
+		}
+		setIsFavorite(!isFavorite);
+	};
+	const removeFromFavoritesHandler = (character) => {
+		const filtered = favorites.filter((i) => i !== character);
+		dispatch(removeFromFavorites(filtered));
+		setIsFavorite(false);
+	};
 
 	return (
 		<div className="card">
 			<div className="card__top">
-				{/* <div className="card__icons">
+				<div className="card__icons">
 					<div className="like">
 						{isFavorite ? (
 							<FavoriteIcon
@@ -53,7 +53,7 @@ const Card = ({ character }) => {
 							/>
 						)}
 					</div>
-				</div> */}
+				</div>
 
 				<div className="card__name">
 					<h2>Name : {character.name}</h2>
