@@ -1,5 +1,3 @@
-<a href="https://stackblitz.com/edit/react-redux-realworld" target="_blank"><img width="187" src="https://github.com/gothinkster/realworld/blob/master/media/edit_on_blitz.png?raw=true" /></a>&nbsp;&nbsp;<a href="https://thinkster.io/tutorials/build-a-real-world-react-redux-application" target="_blank"><img width="384" src="https://raw.githubusercontent.com/gothinkster/realworld/master/media/learn-btn-hr.png" /></a>
-
 ### [Demo](https://starwars-universe-ng.netlify.app/)&nbsp;&nbsp;&nbsp;&nbsp;[Starwars Project](https://starwars-universe-ng.netlify.app/)
 
 Originally created for Voyance HQ test. The codebase is now feature complete; please submit bug fixes via pull requests & feedback via issues.
