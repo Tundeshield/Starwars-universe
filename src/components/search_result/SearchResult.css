@@ -21,3 +21,8 @@ h2 {
 h4 {
 	color: #c62725;
 }
+@media screen and (max-width: 786px) {
+	.search__result {
+		width: 60%;
+	}
+}

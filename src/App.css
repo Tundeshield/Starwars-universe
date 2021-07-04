@@ -28,3 +28,17 @@
 	gap: 10px;
 	margin-left: 0.2rem;
 }
+
+@media screen and (max-width: 786px) {
+	.body {
+		display: grid;
+		grid-template-columns: 2fr 4fr;
+	}
+	.body__right {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		justify-items: center;
+		gap: 10px;
+		margin-left: 0.2rem;
+	}
+}

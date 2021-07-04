@@ -14,7 +14,7 @@ const CharacterPage = () => {
 		<div className="characterPage">
 			<div className="characterPage__left">
 				<div className="character__detail ">
-					<h2>Name : {character.name}</h2>
+					<h2 className="character__name">{character.name}</h2>
 				</div>
 				<div className="character__detail">
 					<h5>Birth Year: {character.birth_year}</h5>
@@ -33,9 +33,6 @@ const CharacterPage = () => {
 				</div>
 				<div className="character__detail">
 					<h5>Skin color: {character.skin_color}</h5>
-				</div>
-				<div className="character__detail">
-					<h5>Films: </h5>
 				</div>
 			</div>
 		</div>

@@ -27,3 +27,27 @@
 	margin-right: 0.8rem;
 	cursor: pointer;
 }
+
+@media screen and (max-width: 786px) {
+	.header {
+		padding: 1rem;
+		align-items: center;
+	}
+	.header__logo > img {
+		width: 4.5rem;
+		cursor: pointer;
+	}
+	.header__social {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 3px;
+		text-align: center;
+		margin-left: 16px;
+		text-align: center;
+	}
+	.header__social .icon {
+		font-size: 1rem;
+		cursor: pointer;
+		margin: 0;
+	}
+}

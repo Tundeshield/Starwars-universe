@@ -21,3 +21,9 @@ img {
 .charPage__img {
 	margin-right: 3rem;
 }
+
+@media screen and (max-width: 786px) {
+	.character__name {
+		font-size: 1.5rem;
+	}
+}
