@@ -1,12 +1,12 @@
 <a href="https://stackblitz.com/edit/react-redux-realworld" target="_blank"><img width="187" src="https://github.com/gothinkster/realworld/blob/master/media/edit_on_blitz.png?raw=true" /></a>&nbsp;&nbsp;<a href="https://thinkster.io/tutorials/build-a-real-world-react-redux-application" target="_blank"><img width="384" src="https://raw.githubusercontent.com/gothinkster/realworld/master/media/learn-btn-hr.png" /></a>
 
-### [Demo](https://starwars-universe-ng.netlify.app/)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://starwars-universe-ng.netlify.app/)
+### [Demo](https://starwars-universe-ng.netlify.app/)&nbsp;&nbsp;&nbsp;&nbsp;[Starwars Project](https://starwars-universe-ng.netlify.app/)
 
 Originally created for Voyance HQ test. The codebase is now feature complete; please submit bug fixes via pull requests & feedback via issues.
 
 ## Getting started
 
-You can view a live demo over at https://react-redux.realworld.io/
+You can view a live demo over at https://starwars-universe-ng.netlify.app/
 
 To get the frontend running locally:
 
@@ -22,7 +22,7 @@ Convinently, i used the open and keyless API swapi.dev/api/people for the applic
 
 ## Functionality overview
 
-The Starwars character project is simply an entertainment focused web app that lists out features of your favorite staw wars characters. It uses a custom API for all requests. You can view a live demo over at https://redux.productionready.io/
+The Starwars character project is simply an entertainment focused web app that lists out features of your favorite star wars characters. It uses a custom API for all requests. You can view a live demo over at https://starwars-universe-ng.netlify.app/
 
 **General functionality:**
 
